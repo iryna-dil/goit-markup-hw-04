@@ -37,8 +37,6 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 
 .section {
@@ -115,6 +113,8 @@ header {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  display: inline-block
+  padding: 24px 0;
 }
 
 .nav-studio:hover,
@@ -144,6 +144,7 @@ header {
   letter-spacing: 0.02em;
   color: #434455;
   font-style: normal;
+  display: inline-block;
 }
 
 .mail:hover,
@@ -176,7 +177,6 @@ ul {
 .studio-h {
   color: #2e2f42;
   text-decoration: none;
-  margin-right: 76px;
 }
 
 .studio-main {
@@ -498,4 +498,11 @@ h2 {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.features-strategy-svg ,
+.features-punctuality-svg,
+.features-diligence-svg,
+.features-tecnologies-svg {
+ background-image:linear-gradient(rgba(46, 47, 66, 0.7)), url(./images/icons.svg#icon-Icon-Strategy), url(./images/icons.svg#icon-Icon-Punctuality), url(./images/icons.svg#icon-Icon-Diligence), url(./images/icons.svg#icon-Icon-Tecnologies);
 }
