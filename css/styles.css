@@ -172,6 +172,7 @@ header {
   color: #434455;
   font-style: normal;
   display: inline-block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:hover,
