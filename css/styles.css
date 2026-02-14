@@ -137,7 +137,9 @@ header {
   color: #404bbf;
 }
 
-.nav-studio::after {
+.nav-studio::after,
+.nav-portfolio::after,
+.nav-contacts::after {
   content: "";
   position: absolute;
   left: 0;
@@ -146,7 +148,7 @@ header {
   width: 0;
   background-color: #404bbf;
   border-radius: 2px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-studio:hover::after,
@@ -154,15 +156,10 @@ header {
 .nav-contacts:hover::after,
 .nav-studio:focus::after,
 .nav-portfolio:focus::after,
-.nav-contacts:focus::after {
-  width: 100%;
-}
-
-.nav-studio::after {
-  width: 100%;
-}
-
-.nav-studio.active::after {
+.nav-contacts:focus::after,
+.nav-studio.active::after,
+.nav-portfolio.active::after,
+.nav-contacts.active::after {
   width: 100%;
 }
 
