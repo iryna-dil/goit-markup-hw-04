@@ -50,12 +50,12 @@ ul {
   padding-bottom: 120px;
 }
 
-header {
+.header {
   border-bottom: 1px solid #e7e9fc;
   box-shadow:
-    0 1px 6px 0 rgba(0, 0, 0, 0.08),
-    0 1px 1px 0 rgba(0, 0, 0, 0.16),
-    0 2px 1px 0 rgba(0, 0, 0, 0.08);
+    0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header .header-nav {
@@ -512,9 +512,9 @@ h2 {
 .portfolio .illustrations:hover,
 .portfolio .courses:hover {
   box-shadow:
-    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16),
-    0 1px 3px 0 rgba(46, 47, 66, 0.12);
+    0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .portfolio .banking .banking-img,
