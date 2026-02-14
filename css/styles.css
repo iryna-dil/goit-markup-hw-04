@@ -52,6 +52,7 @@ ul {
 
 header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .header .header-nav {
@@ -123,19 +124,15 @@ header {
 .nav-studio:focus,
 .nav-portfolio:focus,
 .nav-contacts:focus,
-.nav-studio:active,
-.nav-portfolio:active,
-.nav-contacts:active {
+.nav-studio:active {
   color: #404bbf;
 }
 
-.nav-studio::after,
-.nav-portfolio::after,
-.nav-contacts::after {
+.nav-studio::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 6px;
+  bottom: -1px;
   height: 4px;
   width: 0;
   background-color: #404bbf;
@@ -200,6 +197,7 @@ ul {
 }
 
 .studio-main {
+  padding: 188px 0;
   min-height: 600px;
   display: flex;
   flex-direction: column;
@@ -211,7 +209,7 @@ ul {
   color: #fff;
   text-align: center;
   background-position: center;
-  background-size: 1440px;
+  background-size: cover;
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
@@ -243,7 +241,7 @@ h1 {
   background-color: #4d5ae5;
   cursor: pointer;
   text-align: center;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -286,10 +284,10 @@ h1 {
   flex-shrink: 0;
 }
 
-.features-strategy-svg,
-.features-punctuality-svg,
-.features-diligence-svg,
-.features-tecnologies-svg {
+.features-strategy-div,
+.features-punctuality-div,
+.features-diligence-div,
+.features-tecnologies-div {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   width: 264px;
@@ -408,6 +406,14 @@ h2 {
   gap: 24px;
   justify-content: center;
   margin-top: 8px;
+  list-style: none;
+}
+
+.mark-svg li,
+.tom-svg li,
+.camila-svg li,
+.daniel-svg li {
+  list-style: none;
 }
 
 .team-social-link {
@@ -603,12 +609,19 @@ h2 {
 .footer-links {
   display: flex;
   gap: 16px;
+  list-style: none;
+}
+
+.footer-links li {
+  list-style: none;
 }
 
 .footer-link {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
