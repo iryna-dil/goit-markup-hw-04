@@ -44,8 +44,6 @@ ul {
   padding-bottom: 120px;
 }
 
-.studio-main,
-.features,
 .team,
 .portfolio {
   padding-top: 120px;
@@ -113,20 +111,15 @@ header {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  display: inline-block
+  display: inline-block;
   padding: 24px 0;
+  position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-studio:hover,
 .nav-portfolio:hover,
-.nav-contacts:hover {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #404bbf;
-}
-
+.nav-contacts:hover,
 .nav-studio:focus,
 .nav-portfolio:focus,
 .nav-contacts:focus,
@@ -134,6 +127,33 @@ header {
 .nav-portfolio:active,
 .nav-contacts:active {
   color: #404bbf;
+}
+
+.nav-studio::after,
+.nav-portfolio::after,
+.nav-contacts::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  height: 4px;
+  width: 0;
+  background-color: #404bbf;
+  border-radius: 2px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-studio:hover::after,
+.nav-portfolio:hover::after,
+.nav-contacts:hover::after,
+.nav-studio:focus::after,
+.nav-portfolio:focus::after,
+.nav-contacts:focus::after {
+  width: 100%;
+}
+
+.nav-studio::after {
+  width: 100%;
 }
 
 .mail,
@@ -180,10 +200,21 @@ ul {
 }
 
 .studio-main {
-  background-color: #2e2f42;
-  padding-top: 188px;
-  padding-bottom: 188px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image:
+    linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/people-office.jpg);
+  background-repeat: no-repeat;
+  color: #fff;
   text-align: center;
+  background-position: center;
+  background-size: 1440px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
@@ -195,7 +226,6 @@ h1 {
   font-size: 56px;
   line-height: 1.07143;
   letter-spacing: 0.02em;
-  text-align: center;
   color: #fff;
 }
 
@@ -213,6 +243,7 @@ h1 {
   background-color: #4d5ae5;
   cursor: pointer;
   text-align: center;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -253,6 +284,18 @@ h1 {
 .features-tecnologies-li {
   width: 264px;
   flex-shrink: 0;
+}
+
+.features-strategy-svg,
+.features-punctuality-svg,
+.features-diligence-svg,
+.features-tecnologies-svg {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .features-strategy,
@@ -327,6 +370,7 @@ h2 {
 .team-ul {
   display: flex;
   gap: 24px;
+  justify-content: center;
 }
 
 .mark-li,
@@ -354,6 +398,36 @@ h2 {
 
 .team-content {
   padding: 32px 16px;
+}
+
+.tom-svg,
+.mark-svg,
+.camila-svg,
+.daniel-svg {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.team-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social-link:hover,
+.team-social-link:focus {
+  background-color: #404bbf;
+}
+
+.team-social-link svg {
+  fill: #f4f4fd;
 }
 
 .mark-h,
@@ -405,8 +479,13 @@ h2 {
 .portfolio .courses {
   width: 360px;
   flex-shrink: 0;
-  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
+
+.portfolio .banking:hover,
+.portfolio .cashless:hover,
 .portfolio .meditation:hover,
 .portfolio .taxi:hover,
 .portfolio .illustrations:hover,
@@ -426,6 +505,36 @@ h2 {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.portfolio-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio .banking:hover .portfolio-overlay,
+.portfolio .cashless:hover .portfolio-overlay,
+.portfolio .meditation:hover .portfolio-overlay,
+.portfolio .taxi:hover .portfolio-overlay,
+.portfolio .illustrations:hover .portfolio-overlay,
+.portfolio .courses:hover .portfolio-overlay {
+  transform: translateY(0);
 }
 
 .portfolio .banking .banking-h,
@@ -461,22 +570,57 @@ h2 {
 
 .footer .container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: baseline;
+  gap: 120px;
 }
 
-.footer .container .logo {
+.footer-info {
+  max-width: 264px;
+}
+
+.footer-info .logo {
   margin-bottom: 16px;
   display: inline-block;
 }
 
 .footer-text {
-  max-width: 264px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
+}
+
+.footer-social-links {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin: 0 0 16px 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  background-color: #31d0aa;
+}
+
+.footer-link svg {
+  fill: #f4f4fd;
 }
 
 .web-f {
@@ -498,11 +642,4 @@ h2 {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.features-strategy-svg ,
-.features-punctuality-svg,
-.features-diligence-svg,
-.features-tecnologies-svg {
- background-image:linear-gradient(rgba(46, 47, 66, 0.7)), url(./images/icons.svg#icon-Icon-Strategy), url(./images/icons.svg#icon-Icon-Punctuality), url(./images/icons.svg#icon-Icon-Diligence), url(./images/icons.svg#icon-Icon-Tecnologies);
 }
